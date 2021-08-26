@@ -3,14 +3,18 @@ import pandas as pd
 import re
 import base64
 import io
+import time
 
 def main():
-	st.title("Keyword Filter Tool")
+	st.title("Gaming Keyword Filter Tool")
 	st.text('Filter out all the irrelevant keywords from your downloads from your favourite keyword research tools!')
+	st.text('Make sure that the CSV contains a column titled \'Keyword\'. \'KEYWORD\' won\'t work. The keyword column is essential, otherwise the file won\'t work.')
+	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
+	
+	
 	uploaded_file = st.file_uploader("Choose a file")
 	if uploaded_file is not None:
 		df = pd.read_csv(uploaded_file)
-		st.write(df) 
 		df['Keyword'] = df['Keyword'].astype(str)
 		def intent(Keyword=""): 
 		    learn = re.search(r'^(is |what |where |who |how |when|can)', Keyword)
@@ -135,16 +139,16 @@ def main():
 		df['Modifier'] = df.apply(lambda x: modifier(x['Keyword']), axis=1)
 		df['Game'] = df.apply(lambda x: game(x['Keyword']), axis=1)
 		
-		certain_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/certain.csv')
-		casinos_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/casinos.csv')
-		deposits_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/deposit.csv')
-		mobile_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/mobile.csv')
-		slot_types_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/slot_types.csv')
-		software_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/software.csv')
-		games_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/games.csv')
-		main_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/main.csv')
-		location_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/location.csv')
-		negative_df = pd.read_csv('/Users/neil.desai/Documents/Scripts/keyword_filtering_script/modifiers/negative.csv')
+		certain_df = pd.read_csv('certain.csv')
+		casinos_df = pd.read_csv('casinos.csv')
+		deposits_df = pd.read_csv('deposit.csv')
+		mobile_df = pd.read_csv('mobile.csv')
+		slot_types_df = pd.read_csv('slot_types.csv')
+		software_df = pd.read_csv('software.csv')
+		games_df = pd.read_csv('games.csv')
+		main_df = pd.read_csv('main.csv')
+		location_df = pd.read_csv('location.csv')
+		negative_df = pd.read_csv('negative.csv')
 
 		certain = certain_df['Header'].values.tolist()
 		negative = negative_df['Header'].values.tolist()
@@ -297,6 +301,7 @@ def main():
 		st.markdown('### **⬇️ Download output CSV File **')
 		href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as ".csv")'
 		st.markdown(href, unsafe_allow_html=True)
+
 
 
 
