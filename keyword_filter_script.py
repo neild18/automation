@@ -24,7 +24,7 @@ def main():
 		        df = pd.read_excel(path)
 		    elif csv: 
 		        df = pd.read_csv(path)
-		    return df
+		return df
 		
 		df = read_file(path)		
 		df.columns= df.columns.str.lower()
