@@ -15,19 +15,23 @@ def main():
 	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
 	
 	uploaded_file = st.file_uploader("Choose a file")
-	path = str(uploaded_file)
-	if path is not None:
+	
+	if uploaded_file is not None:
+		path = str(uploaded_file)
+
 		def read_file(path):
-			csv = re.search(r'csv$', path)
-			excel = re.search(r'xlsx$', path)
-			if excel:
-		        	excel_file = pd.read_excel(path)
-				return excel_file
-			elif csv: 
-				csv_file = pd.read_csv(path)
-				return csv_file		
+		    csv = re.search(r'csv$', path)
+		    excel = re.search(r'xlsx$', path)
+		    if excel:
+		        df = pd.read_excel(path) # Default is zero
+		    elif csv: # Assuming "csv". You can make it explicit
+		        df = pd.read_csv(path)
+		    return df
+
+
+		df = read_file(path)
 		
-		df = read_file(path)		
+				
 		df.columns= df.columns.str.lower()
 		df['keyword'] = df['keyword'].astype(str)
 		def intent(keyword=""): 
