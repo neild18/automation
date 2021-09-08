@@ -25,7 +25,6 @@ def main():
 				return pd.read_excel(path)
 			elif csv: 
 				return pd.read_csv(path)
-			return df
 
 		df = read_file(path)
 		st.write(df)
