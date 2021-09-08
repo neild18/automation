@@ -300,11 +300,11 @@ def main():
 
 		def csv_downloader(data):
 
-		csvfile = data.to_csv()
-		b64 = base64.b64encode(csvfile.encode()).decode()
-		new_filename = "keyword_concat_output_{}_.csv".format(timestr)
-		href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Download</a>'
-		st.markdown(href,unsafe_allow_html=True)
+			csvfile = data.to_csv()
+			b64 = base64.b64encode(csvfile.encode()).decode()
+			new_filename = "keyword_concat_output_{}_.csv".format(timestr)
+			href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Download</a>'
+			st.markdown(href,unsafe_allow_html=True)
 
 		csv_downloader(df)
 
