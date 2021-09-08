@@ -297,7 +297,8 @@ def main():
 		#Lambda way of looping
 		df['Filtered'] = df.apply(lambda x: test(x['New'], x['Keyword']), axis=1)
 		st.write(df) 
-
+		
+		timestr = time.strftime("%Y%m%d-%H%M%S")
 		def csv_downloader(data):
 
 			csvfile = data.to_csv()
