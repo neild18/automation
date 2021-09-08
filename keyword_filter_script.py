@@ -15,19 +15,19 @@ def main():
 	
 	uploaded_file = st.file_uploader("Choose a file")
 	
-	if uploaded_file is not None:
-		path = str(uploaded_file)
 
-		def read_file(path):
-			csv = re.search(r'csv$', path)
-			excel = re.search(r'xlsx$', path)
-			if excel:
-				return pd.read_excel(path)
-			elif csv: 
-				return pd.read_csv(path)
+	path = str(uploaded_file)
 
-		df = read_file(path)
-		st.write(df)
+	def read_file(path):
+		csv = re.search(r'csv$', path)
+		excel = re.search(r'xlsx$', path)
+		if excel:
+			return pd.read_excel(path)
+		elif csv: 
+			return pd.read_csv(path)
+
+	df = read_file(path)
+	st.write(df)
 		
 
 
