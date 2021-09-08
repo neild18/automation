@@ -27,7 +27,7 @@ def main():
 		        return pd.read_csv(path)
 
 		df = read_file(path)
-
+		st.write(df)
 		
 
 
