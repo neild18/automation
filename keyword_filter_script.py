@@ -18,14 +18,14 @@ def main():
 	path = str(uploaded_file)
 	if path is not None:
 		def read_file(path):
-		    csv = re.search(r'csv$', path)
-		    excel = re.search(r'xlsx$', path)
-		    if excel:
-		        excel_file = pd.read_excel(path)
-			return excel_file
-		    elif csv: 
-		        csv_file = pd.read_csv(path)
-			return csv_file		
+			csv = re.search(r'csv$', path)
+			excel = re.search(r'xlsx$', path)
+			if excel:
+		        	excel_file = pd.read_excel(path)
+				return excel_file
+			elif csv: 
+				csv_file = pd.read_csv(path)
+				return csv_file		
 		
 		df = read_file(path)		
 		df.columns= df.columns.str.lower()
