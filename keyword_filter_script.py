@@ -22,9 +22,9 @@ def main():
 			csv = re.search(r'csv$', path)
 			excel = re.search(r'xlsx$', path)
 			if excel:
-				df = pd.read_excel(path)
+				return pd.read_excel(path)
 			elif csv: 
-				df = pd.read_csv(path)
+				return pd.read_csv(path)
 			return df
 
 		df = read_file(path)
