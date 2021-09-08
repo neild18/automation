@@ -21,10 +21,11 @@ def main():
 		    csv = re.search(r'csv$', path)
 		    excel = re.search(r'xlsx$', path)
 		    if excel:
-		        df = pd.read_excel(path)
+		        excel_file = pd.read_excel(path)
+			return excel_file
 		    elif csv: 
-		        df = pd.read_csv(path)
-		return df
+		        csv_file = pd.read_csv(path)
+			return csv_file		
 		
 		df = read_file(path)		
 		df.columns= df.columns.str.lower()
