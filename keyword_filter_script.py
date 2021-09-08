@@ -16,19 +16,12 @@ def main():
 	
 	uploaded_file = st.file_uploader("Choose a file")
 	if uploaded_file is not None:
-		path = uploaded_file
+		#read csv
+		df=pd.read_csv(uploaded_file)
 
-		def read_file(path):
-		    csv = re.search(r'csv$', path)
-		    excel = re.search(r'xlsx$', path)
-		    if excel:
-		        df = pd.read_excel(path) # Default is zero
-		    elif csv: # Assuming "csv". You can make it explicit
-		        df = pd.read_csv(path)
-		    return df
+   		#read xls or xlsx
+   		df=pd.read_excel(uploaded_file)
 
-
-		df = read_file(path)
 		df.columns= df.columns.str.lower()
 		df['keyword'] = df['keyword'].astype(str)
 		def intent(keyword=""): 
