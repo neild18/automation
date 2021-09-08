@@ -17,13 +17,14 @@ def main():
 	uploaded_file = st.file_uploader("Choose a file")
 	if uploaded_file is not None:
 		df = pd.read_csv(uploaded_file)
-		df['Keyword'] = df['Keyword'].astype(str)
-		def intent(Keyword=""): 
-		    learn = re.search(r'^(is |what |where |who |how |when|can)', Keyword)
-		    inform = re.search(r'(news|strategy|community| latest|forum(s)*|q(&| & | and )a| stor(y|ies)|interview|opinion|scoop|explaine(r|d)| post|digest|tutorial|course|guide|tips|review)', Keyword)
-		    compare = re.search(r'(best |top |compare|comparison|provider)', Keyword)
-		    play = re.search(r'(play|demo|free|game|online|mobile|download|bonus|code|live|money|payouts|pay outs)', Keyword)
-		    gamble = re.search(r'(deposit|pay[ ]*outs|real|bet|odds|betting)', Keyword)
+		df.columns= df.columns.str.lower()
+		df['keyword'] = df['keyword'].astype(str)
+		def intent(keyword=""): 
+		    learn = re.search(r'^(is |what |where |who |how |when|can)', keyword)
+		    inform = re.search(r'(news|strategy|community| latest|forum(s)*|q(&| & | and )a| stor(y|ies)|interview|opinion|scoop|explaine(r|d)| post|digest|tutorial|course|guide|tips|review)', keyword)
+		    compare = re.search(r'(best |top |compare|comparison|provider)', keyword)
+		    play = re.search(r'(play|demo|free|game|online|mobile|download|bonus|code|live|money|payouts|pay outs)', keyword)
+		    gamble = re.search(r'(deposit|pay[ ]*outs|real|bet|odds|betting)', keyword)
 		    if learn:
 		    	return 'learn'
 		    elif inform:
@@ -36,33 +37,33 @@ def main():
 		    	return 'Gamble'
 		    else:
 		        return 'none'
-		def modifier(Keyword=""): 
-		    free = re.search(r'free', Keyword)
-		    strategy = re.search(r'strategy', Keyword)
-		    calculator = re.search(r'calculator', Keyword)
-		    odds = re.search(r'odds', Keyword)
-		    tips = re.search(r'tips', Keyword)
-		    offers = re.search(r'offers', Keyword)
-		    deposit = re.search(r'deposit', Keyword)
-		    best = re.search(r'(top |best )', Keyword)
-		    live = re.search(r'live', Keyword)
-		    review = re.search(r'review', Keyword)
-		    download = re.search(r'download', Keyword)
-		    money = re.search(r'money', Keyword)
-		    mobile = re.search(r'(app |apps |android|iphone|mobile)', Keyword)
-		    online = re.search(r'online', Keyword)
-		    payout = re.search(r'(payout|pay out)', Keyword)
-		    highest = re.search(r'highest', Keyword)
-		    bonus = re.search(r'bonus', Keyword)
-		    codes = re.search(r'code', Keyword)
-		    wins = re.search(r'(win |wins )', Keyword)
-		    codes = re.search(r'code', Keyword)
-		    youtube = re.search(r'youtube', Keyword)
-		    video = re.search(r'video', Keyword)
-		    progressive = re.search(r'progressive', Keyword)
-		    year = re.search(r'201[0-9]{1}', Keyword)
-		    game = re.search(r'game', Keyword)
-		    bag = re.search(r'bag', Keyword)
+		def modifier(keyword=""): 
+		    free = re.search(r'free', keyword)
+		    strategy = re.search(r'strategy', keyword)
+		    calculator = re.search(r'calculator', keyword)
+		    odds = re.search(r'odds', keyword)
+		    tips = re.search(r'tips', keyword)
+		    offers = re.search(r'offers', keyword)
+		    deposit = re.search(r'deposit', keyword)
+		    best = re.search(r'(top |best )', keyword)
+		    live = re.search(r'live', keyword)
+		    review = re.search(r'review', keyword)
+		    download = re.search(r'download', keyword)
+		    money = re.search(r'money', keyword)
+		    mobile = re.search(r'(app |apps |android|iphone|mobile)', keyword)
+		    online = re.search(r'online', keyword)
+		    payout = re.search(r'(payout|pay out)', keyword)
+		    highest = re.search(r'highest', keyword)
+		    bonus = re.search(r'bonus', keyword)
+		    codes = re.search(r'code', keyword)
+		    wins = re.search(r'(win |wins )', keyword)
+		    codes = re.search(r'code', keyword)
+		    youtube = re.search(r'youtube', keyword)
+		    video = re.search(r'video', keyword)
+		    progressive = re.search(r'progressive', keyword)
+		    year = re.search(r'201[0-9]{1}', keyword)
+		    game = re.search(r'game', keyword)
+		    bag = re.search(r'bag', keyword)
 		    if free:
 		        return 'Free'
 		    elif offers:
@@ -113,14 +114,14 @@ def main():
 		        return 'none'
 
 		# Categorisation function which accepts x arguments
-		def game(Keyword=""): 
-		    sport = re.search(r'(football|sport|cricket|nba|euros|nhl|baseball|basketball|nfl|soccer|ufc|boxing|euro 202(0|1|4|8)|world cup|tennis|hockey|esport|f1|olympics|superbowl|golf)', Keyword)
-		    poker = re.search(r'(poker|texas hold em|texas holdem|holdem)', Keyword)
-		    blackjack = re.search(r'blackjack', Keyword)
-		    roulette = re.search(r'roulette', Keyword)
-		    horse_racing = re.search(r'(horse racing|horse races)', Keyword)
-		    bingo = re.search(r'bingo', Keyword)
-		    slots = re.search(r'(slot|pokies|fruit machine)', Keyword)
+		def game(keyword=""): 
+		    sport = re.search(r'(football|sport|cricket|nba|euros|nhl|baseball|basketball|nfl|soccer|ufc|boxing|euro 202(0|1|4|8)|world cup|tennis|hockey|esport|f1|olympics|superbowl|golf)', keyword)
+		    poker = re.search(r'(poker|texas hold em|texas holdem|holdem)', keyword)
+		    blackjack = re.search(r'blackjack', keyword)
+		    roulette = re.search(r'roulette', keyword)
+		    horse_racing = re.search(r'(horse racing|horse races)', keyword)
+		    bingo = re.search(r'bingo', keyword)
+		    slots = re.search(r'(slot|pokies|fruit machine)', keyword)
 		    if sport:
 		        return 'sport'
 		    elif poker:
@@ -137,9 +138,9 @@ def main():
 		        return 'slots'
 		    else:
 		        return 'none'
-		df['Intent'] = df.apply(lambda x: intent(x['Keyword']), axis=1)
-		df['Modifier'] = df.apply(lambda x: modifier(x['Keyword']), axis=1)
-		df['Game'] = df.apply(lambda x: game(x['Keyword']), axis=1)
+		df['Intent'] = df.apply(lambda x: intent(x['keyword']), axis=1)
+		df['Modifier'] = df.apply(lambda x: modifier(x['keyword']), axis=1)
+		df['Game'] = df.apply(lambda x: game(x['keyword']), axis=1)
 		
 		certain_df = pd.read_csv('certain.csv')
 		casinos_df = pd.read_csv('casinos.csv')
@@ -176,7 +177,7 @@ def main():
 		negative_word = [word for line in negative for word in line.split()]
 		location_word = [word for line in location for word in line.split()]
 
-		df['New'] = df['Keyword'].str.split()
+		df['New'] = df['keyword'].str.split()
 		#df['New'] = df['New'].astype(str).values.tolist()
 
 		a_list = df['New']
@@ -295,7 +296,7 @@ def main():
 		        return "Negative"
 
 		#Lambda way of looping
-		df['Filtered'] = df.apply(lambda x: test(x['New'], x['Keyword']), axis=1)
+		df['Filtered'] = df.apply(lambda x: test(x['New'], x['keyword']), axis=1)
 		st.write(df) 
 		
 		timestr = time.strftime("%Y%m%d-%H%M%S")
