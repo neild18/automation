@@ -15,8 +15,8 @@ def main():
 	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
 	
 	uploaded_file = st.file_uploader("Choose a file")
-	if uploaded_file is not None:
-
+	path = str(uploaded_file)
+	if path is not None:
 		def read_file(path):
 		    csv = re.search(r'csv$', path)
 		    excel = re.search(r'xlsx$', path)
@@ -25,7 +25,7 @@ def main():
 		    elif csv: 
 		        df = pd.read_csv(path)
 		    return df
-		path = str(uploaded_file)
+		
 		df = read_file(path)		
 		df.columns= df.columns.str.lower()
 		df['keyword'] = df['keyword'].astype(str)
