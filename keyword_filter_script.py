@@ -16,7 +16,7 @@ def main():
 	
 	uploaded_file = st.file_uploader("Choose a file")
 	if uploaded_file is not None:
-		path = uploaded_file
+		path = str(uploaded_file)
 		def read_file(path):
 		    csv = re.search(r'csv$', path)
 		    excel = re.search(r'xlsx$', path)
