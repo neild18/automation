@@ -19,13 +19,13 @@ def main():
 		path = uploaded_file
 
 		def read_file(path):
-		    csv = re.search(r'csv$', path)
-		    excel = re.search(r'xlsx$', path)
-		    if excel:
-			df = pd.read_excel(path)
-		    elif csv: 
-			df = pd.read_excel(path)
-		    return df
+			csv = re.search(r'csv$', path)
+			excel = re.search(r'xlsx$', path)
+			if excel:
+				df = pd.read_excel(path)
+			elif csv: 
+				df = pd.read_csv(path)
+			return df
 
 		df = read_file(path)
 		st.write(df)
