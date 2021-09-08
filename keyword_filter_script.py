@@ -29,7 +29,7 @@ def main():
 		    return df
 
 
-		df = read_file(path)
+		read_file(path)
 		
 				
 		df.columns= df.columns.str.lower()
