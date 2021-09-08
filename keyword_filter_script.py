@@ -28,7 +28,7 @@ def main():
 		        return pd.read_csv(path)
 
 
-		read_file(path)
+		df = read_file(path)
 		
 				
 		df.columns= df.columns.str.lower()
