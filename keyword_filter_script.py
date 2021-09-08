@@ -21,10 +21,10 @@ def main():
 		    csv = re.search(r'csv$', path)
 		    excel = re.search(r'xlsx$', path)
 		    if excel:
-		        df = pd.read_excel(path) # Default is zero
+		        file = pd.read_excel(path) # Default is zero
 		    elif csv: # Assuming "csv". You can make it explicit
-		        df = pd.read_csv(path)
-		    return df
+		        file = pd.read_csv(path)
+		    return file
 
 
 		df = read_file(path)
