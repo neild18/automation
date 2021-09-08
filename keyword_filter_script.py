@@ -21,13 +21,13 @@ def main():
 		    csv = re.search(r'csv$', path)
 		    excel = re.search(r'xlsx$', path)
 		    if excel:
-		        file = pd.read_excel(path) # Default is zero
+		        df = pd.read_excel(path) # Default is zero
 		    elif csv: # Assuming "csv". You can make it explicit
-		        file = pd.read_csv(path)
-		    return file
+		        df = pd.read_csv(path)
+		    return df
 
 
-		df = read_file(path)
+		read_file(path)
 		df.columns= df.columns.str.lower()
 		df['keyword'] = df['keyword'].astype(str)
 		def intent(keyword=""): 
