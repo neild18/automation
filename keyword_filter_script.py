@@ -20,7 +20,7 @@ def main():
 
 		def read_file(path):
 		    csv = re.search(r'\.csv', path)
-		    excel = re.search(r'\.xlsx$', path)
+		    excel = re.search(r'\.xlsx', path)
 		    if excel:
 		        df = pd.read_excel(path) # Default is zero
 		    elif csv: # Assuming "csv". You can make it explicit
