@@ -103,7 +103,7 @@ def main():
 		    elif wins:
 		    	return 'Wins'
 		    elif bonus:
-			return 'Bonus'
+		    	return 'Bonus'
 		    elif bonus and codes:
 			return 'Bonus_codes'
 		    elif youtube:
