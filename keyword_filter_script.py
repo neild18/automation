@@ -18,9 +18,13 @@ def main():
 	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
 	uploaded_file = st.file_uploader("Choose a file", type=["csv","xlsx"])
 	if uploaded_file is not None:
+		# To convert to a string based IO:
+		stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+		# To read file as string:
+		string_data = stringio.read()
+		st.write(string_data)
 		if uploaded_file.name[0][-4:] == 'xlsx':
 			df = pd.read_excel(uploaded_file)
-
 		else:
 			df = pd.read_csv(uploaded_file)
 
