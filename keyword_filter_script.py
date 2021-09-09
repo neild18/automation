@@ -99,7 +99,7 @@ def main():
 		    elif payout:
 		    	return 'Payout'
 		    elif highest:
-			return 'Highest'
+		    	return 'Highest'
 		    elif wins:
 			return 'Wins'
 		    elif bonus:
