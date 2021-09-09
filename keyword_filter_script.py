@@ -143,7 +143,7 @@ def main():
 		    elif slots:
 		    	return 'slots'
 		    else:
-			return 'none'
+		    	return 'none'
 		df['Intent'] = df.apply(lambda x: intent(x['keyword']), axis=1)
 		df['Modifier'] = df.apply(lambda x: modifier(x['keyword']), axis=1)
 		df['Game'] = df.apply(lambda x: game(x['keyword']), axis=1)
