@@ -22,7 +22,6 @@ def main():
 		stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
 		# To read file as string:
 		string_data = stringio.read()
-		st.write(string_data)
 		if uploaded_file.name[0][-4:] == 'xlsx':
 			df = pd.read_excel(uploaded_file)
 		else:
