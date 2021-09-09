@@ -293,13 +293,13 @@ def main():
 		    in_location = any(item in location for item in x)
 		    negative_stopwords = any(item in negative_word for item in x)
 		    if t is True:
-			return "Positive"
+		    	return "Positive"
 		    elif negative_stopwords is True or in_location is True:
-			return "Negative"
+		    	return "Negative"
 		    elif check is True:
-			return "Positive"
+		    	return "Positive"
 		    else :
-			return "Negative"
+		    	return "Negative"
 
 		#Lambda way of looping
 		df['Filtered'] = df.apply(lambda x: test(x['New'], x['keyword']), axis=1)
