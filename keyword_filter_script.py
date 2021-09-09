@@ -14,19 +14,17 @@ def main():
 	st.warning('Make sure that the CSV contains a column titled \'Keyword\'. \'KEYWORD\' won\'t work. The keyword column is essential, otherwise the file won\'t work.')
 	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
 	
-	uploaded_file = st.file_uploader("Choose a file")
-	if uploaded_file is not None:
-		path = str(uploaded_file)
+	file = st.file_uploader("Upload file", type=["csv","xlsx"])
+	show_file = st.empty()
+	if not file:
+		show_file.info("Please Upload a file : {} ".format(' '.join(["csv", "xlsx"])))
+		return
+	content = file.getvalue()
 
-		def read_file(path):
-		    csv = re.search(r'\.csv', path)
-		    excel = re.search(r'\.xlsx', path)
-		    if excel:
-		        df = pd.read_excel(path) # Default is zero
-		    elif csv: # Assuming "csv". You can make it explicit
-		        df = pd.read_csv(path)
-		    return df
-		df = read_file(path)
+	if isinstance(file, csv):
+		df = pd.read_csv(file)
+	else:
+		df = pd.read_excel(file)
 
 
 		df.columns= df.columns.str.lower()
