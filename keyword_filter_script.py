@@ -89,7 +89,7 @@ def main():
 		    elif live:
 		    	return 'Live'
 		    elif review:
-			return 'Review'
+		    	return 'Review'
 		    elif download:
 			return 'Downloads'
 		    elif mobile:
