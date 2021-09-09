@@ -109,7 +109,7 @@ def main():
 		    elif youtube:
 		    	return 'Youtube'
 		    elif video:
-			return 'Video'
+		    	return 'Video'
 		    elif year:
 			return 'Year'
 		    elif bag:
