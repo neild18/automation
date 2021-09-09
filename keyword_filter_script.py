@@ -131,7 +131,7 @@ def main():
 		    if sport:
 		    	return 'sport'
 		    elif poker:
-			return 'poker'
+		    	return 'poker'
 		    elif blackjack:
 			return 'blackjack'
 		    elif roulette:
