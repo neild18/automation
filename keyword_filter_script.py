@@ -129,7 +129,7 @@ def main():
 		    bingo = re.search(r'bingo', keyword)
 		    slots = re.search(r'(slot|pokies|fruit machine)', keyword)
 		    if sport:
-			return 'sport'
+		    	return 'sport'
 		    elif poker:
 			return 'poker'
 		    elif blackjack:
