@@ -137,7 +137,7 @@ def main():
 		    elif roulette:
 		    	return 'roulette'
 		    elif horse_racing:
-			return 'horse_racing'
+		    	return 'horse_racing'
 		    elif bingo:
 			return 'bingo'
 		    elif slots:
