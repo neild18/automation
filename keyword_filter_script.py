@@ -18,7 +18,7 @@ def main():
 		if upload_file.name[0][-4:] == 'xlsx':
 			df = pd.read_excel(upload_file)
 			st.dataframe(df)
-	    	else:
+		else:
 			df = pd.read_csv(upload_file)
 			st.dataframe(df)
 
