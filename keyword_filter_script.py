@@ -91,7 +91,7 @@ def main():
 		    elif review:
 		    	return 'Review'
 		    elif download:
-			return 'Downloads'
+		    	return 'Downloads'
 		    elif mobile:
 			return 'mobile'
 		    elif online:
