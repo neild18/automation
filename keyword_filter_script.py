@@ -26,6 +26,7 @@ def main():
 		    elif csv: # Assuming "csv". You can make it explicit
 		        df = pd.read_csv(path)
 		    return df
+		df = read_file(path)
 
 
 		df.columns= df.columns.str.lower()
