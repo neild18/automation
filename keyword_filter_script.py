@@ -77,7 +77,7 @@ def main():
 		    elif strategy:
 		    	return 'Strategy'
 		    elif calculator:
-			return 'Calculator'
+		    	return 'Calculator'
 		    elif odds:
 			return 'Odds'
 		    elif tips:
