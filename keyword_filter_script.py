@@ -246,7 +246,7 @@ def main():
 		def stw(x): 
 		    stw = any(item in slot_types_word for item in x)
 		    if stw is True:
-			return "True"
+		    	return "True"
 		    else:
 			return "False"
 
