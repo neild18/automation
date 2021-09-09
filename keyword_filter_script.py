@@ -97,7 +97,7 @@ def main():
 		    elif online:
 		    	return 'Online'
 		    elif payout:
-			return 'Payout'
+		    	return 'Payout'
 		    elif highest:
 			return 'Highest'
 		    elif wins:
