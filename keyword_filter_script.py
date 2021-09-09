@@ -26,7 +26,7 @@ def main():
 		df.columns= df.columns.str.lower()
 		df['keyword'] = df['keyword'].astype(str)
 		def intent(keyword=""): 
-			learn = re.search(r'^(is |what |where |who |how |when|can)', keyword)
+		    learn = re.search(r'^(is |what |where |who |how |when|can)', keyword)
 		    inform = re.search(r'(news|strategy|community| latest|forum(s)*|q(&| & | and )a| stor(y|ies)|interview|opinion|scoop|explaine(r|d)| post|digest|tutorial|course|guide|tips|review)', keyword)
 		    compare = re.search(r'(best |top |compare|comparison|provider)', keyword)
 		    play = re.search(r'(play|demo|free|game|online|mobile|download|bonus|code|live|money|payouts|pay outs)', keyword)
