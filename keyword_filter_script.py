@@ -95,7 +95,7 @@ def main():
 		    elif mobile:
 		    	return 'mobile'
 		    elif online:
-			return 'Online'
+		    	return 'Online'
 		    elif payout:
 			return 'Payout'
 		    elif highest:
