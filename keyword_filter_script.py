@@ -71,7 +71,7 @@ def main():
 		    game = re.search(r'game', keyword)
 		    bag = re.search(r'bag', keyword)
 		    if free:
-			return 'Free'
+		    	return 'Free'
 		    elif offers:
 			return 'Offers'
 		    elif strategy:
