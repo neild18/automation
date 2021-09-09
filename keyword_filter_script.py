@@ -117,7 +117,7 @@ def main():
 		    elif money:
 		    	return 'Money'
 		    else:
-			return 'none'
+		    	return 'none'
 
 		# Categorisation function which accepts x arguments
 		def game(keyword=""): 
