@@ -141,7 +141,7 @@ def main():
 		    elif bingo:
 		    	return 'bingo'
 		    elif slots:
-			return 'slots'
+		    	return 'slots'
 		    else:
 			return 'none'
 		df['Intent'] = df.apply(lambda x: intent(x['keyword']), axis=1)
