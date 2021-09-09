@@ -26,23 +26,23 @@ def main():
 		df.columns= df.columns.str.lower()
 		df['keyword'] = df['keyword'].astype(str)
 		def intent(keyword=""): 
-		    learn = re.search(r'^(is |what |where |who |how |when|can)', keyword)
+			learn = re.search(r'^(is |what |where |who |how |when|can)', keyword)
 		    inform = re.search(r'(news|strategy|community| latest|forum(s)*|q(&| & | and )a| stor(y|ies)|interview|opinion|scoop|explaine(r|d)| post|digest|tutorial|course|guide|tips|review)', keyword)
 		    compare = re.search(r'(best |top |compare|comparison|provider)', keyword)
 		    play = re.search(r'(play|demo|free|game|online|mobile|download|bonus|code|live|money|payouts|pay outs)', keyword)
 		    gamble = re.search(r'(deposit|pay[ ]*outs|real|bet|odds|betting)', keyword)
 		    if learn:
-			return 'learn'
+				return 'learn'
 		    elif inform:
-			return 'Inform'
+				return 'Inform'
 		    elif compare:
-			return 'Compare'
+				return 'Compare'
 		    elif play:
-			return 'Play'
+				return 'Play'
 		    elif gamble:
-			return 'Gamble'
+				return 'Gamble'
 		    else:
-			return 'none'
+				return 'none'
 		def modifier(keyword=""): 
 		    free = re.search(r'free', keyword)
 		    strategy = re.search(r'strategy', keyword)
@@ -71,53 +71,53 @@ def main():
 		    game = re.search(r'game', keyword)
 		    bag = re.search(r'bag', keyword)
 		    if free:
-			return 'Free'
+				return 'Free'
 		    elif offers:
-			return 'Offers'
+				return 'Offers'
 		    elif strategy:
-			return 'Strategy'
+				return 'Strategy'
 		    elif calculator:
-			return 'Calculator'
+				return 'Calculator'
 		    elif odds:
-			return 'Odds'
+				return 'Odds'
 		    elif tips:
-			return 'Tips'
+				return 'Tips'
 		    elif deposit:
-			return 'Deposit'
+				return 'Deposit'
 		    elif best:
-			return 'Best'
+				return 'Best'
 		    elif live:
-			return 'Live'
+				return 'Live'
 		    elif review:
-			return 'Review'
+				return 'Review'
 		    elif download:
-			return 'Downloads'
+				return 'Downloads'
 		    elif mobile:
-			return 'mobile'
+				return 'mobile'
 		    elif online:
-			return 'Online'
+				return 'Online'
 		    elif payout:
-			return 'Payout'
+				return 'Payout'
 		    elif highest:
-			return 'Highest'
+				return 'Highest'
 		    elif wins:
-			return 'Wins'
+				return 'Wins'
 		    elif bonus:
-			return 'Bonus'
+				return 'Bonus'
 		    elif bonus and codes:
-			return 'Bonus_codes'
+				return 'Bonus_codes'
 		    elif youtube:
-			return 'Youtube'
+				return 'Youtube'
 		    elif video:
-			return 'Video'
+				return 'Video'
 		    elif year:
-			return 'Year'
+				return 'Year'
 		    elif bag:
-			return 'Bag'
+				return 'Bag'
 		    elif money:
-			return 'Money'
+				return 'Money'
 		    else:
-			return 'none'
+				return 'none'
 
 		# Categorisation function which accepts x arguments
 		def game(keyword=""): 
@@ -129,21 +129,21 @@ def main():
 		    bingo = re.search(r'bingo', keyword)
 		    slots = re.search(r'(slot|pokies|fruit machine)', keyword)
 		    if sport:
-			return 'sport'
+				return 'sport'
 		    elif poker:
-			return 'poker'
+				return 'poker'
 		    elif blackjack:
-			return 'blackjack'
+				return 'blackjack'
 		    elif roulette:
-			return 'roulette'
+				return 'roulette'
 		    elif horse_racing:
-			return 'horse_racing'
+				return 'horse_racing'
 		    elif bingo:
-			return 'bingo'
+				return 'bingo'
 		    elif slots:
-			return 'slots'
+				return 'slots'
 		    else:
-			return 'none'
+				return 'none'
 		df['Intent'] = df.apply(lambda x: intent(x['keyword']), axis=1)
 		df['Modifier'] = df.apply(lambda x: modifier(x['keyword']), axis=1)
 		df['Game'] = df.apply(lambda x: game(x['keyword']), axis=1)
@@ -191,9 +191,9 @@ def main():
 		def cert(x): 
 		    cw = any(item in certain_word for item in x)
 		    if cw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['certain'] = df['New'].apply(lambda x: cert(x))
 
@@ -202,9 +202,9 @@ def main():
 		def cw(x): 
 		    cw = any(item in casino_word for item in x)
 		    if cw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['casino'] = df['New'].apply(lambda x: cw(x))
 
@@ -213,9 +213,9 @@ def main():
 		def dw(x):            
 		    dw = any(item in deposit_word for item in x)
 		    if dw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['deposits'] = df['New'].apply(lambda x: dw(x))
 
@@ -224,9 +224,9 @@ def main():
 		def mw(x): 
 		    mw = any(item in mobile_word for item in x)
 		    if mw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['mobile'] = df['New'].apply(lambda x: mw(x))
 
@@ -235,9 +235,9 @@ def main():
 		def gw(x): 
 		    gw = any(item in games_word for item in x)
 		    if gw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['games'] = df['New'].apply(lambda x: gw(x))
 
@@ -246,9 +246,9 @@ def main():
 		def stw(x): 
 		    stw = any(item in slot_types_word for item in x)
 		    if stw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['slot_types'] = df['New'].apply(lambda x: stw(x))
 
@@ -257,9 +257,9 @@ def main():
 		def sw(x): 
 		    sw = any(item in software_word for item in x)
 		    if sw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['software'] = df['New'].apply(lambda x: sw(x))
 
@@ -268,9 +268,9 @@ def main():
 		def maw(x): 
 		    maw = any(item in main_word for item in x)
 		    if maw is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['main'] = df['New'].apply(lambda x: maw(x))
 
@@ -279,9 +279,9 @@ def main():
 		def loc(x): 
 		    loc = any(item in location for item in x)
 		    if loc is True:
-			return "True"
+				return "True"
 		    else:
-			return "False"
+				return "False"
 
 		df['location'] = df['New'].apply(lambda x: loc(x))
 
@@ -293,13 +293,13 @@ def main():
 		    in_location = any(item in location for item in x)
 		    negative_stopwords = any(item in negative_word for item in x)
 		    if t is True:
-			return "Positive"
+				return "Positive"
 		    elif negative_stopwords is True or in_location is True:
-			return "Negative"
+				return "Negative"
 		    elif check is True:
-			return "Positive"
+				return "Positive"
 		    else :
-			return "Negative"
+				return "Negative"
 
 		#Lambda way of looping
 		df['Filtered'] = df.apply(lambda x: test(x['New'], x['keyword']), axis=1)
