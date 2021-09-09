@@ -81,7 +81,7 @@ def main():
 		    elif odds:
 		    	return 'Odds'
 		    elif tips:
-			return 'Tips'
+		    	return 'Tips'
 		    elif deposit:
 			return 'Deposit'
 		    elif best:
