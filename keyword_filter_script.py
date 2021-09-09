@@ -73,7 +73,7 @@ def main():
 		    if free:
 		    	return 'Free'
 		    elif offers:
-			return 'Offers'
+		    	return 'Offers'
 		    elif strategy:
 			return 'Strategy'
 		    elif calculator:
