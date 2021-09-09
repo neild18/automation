@@ -111,7 +111,7 @@ def main():
 		    elif video:
 		    	return 'Video'
 		    elif year:
-			return 'Year'
+		    	return 'Year'
 		    elif bag:
 			return 'Bag'
 		    elif money:
