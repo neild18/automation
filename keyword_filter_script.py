@@ -4,6 +4,7 @@ import re
 import base64
 import io
 import time
+from io import StringIO
 
 def main():
 	st.title("Gaming Keyword Filter Tool")
