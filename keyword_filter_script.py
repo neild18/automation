@@ -83,7 +83,7 @@ def main():
 		    elif tips:
 		    	return 'Tips'
 		    elif deposit:
-			return 'Deposit'
+		    	return 'Deposit'
 		    elif best:
 			return 'Best'
 		    elif live:
