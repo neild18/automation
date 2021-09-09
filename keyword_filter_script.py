@@ -15,12 +15,12 @@ def main():
 	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
 	
 	if upload_file is not None:
-	    if upload_file.name[0][-4:] == 'xlsx':
-		df = pd.read_excel(upload_file)
-		st.dataframe(df)
-	    else:
-		df = pd.read_csv(upload_file)
-		st.dataframe(df)
+		if upload_file.name[0][-4:] == 'xlsx':
+			df = pd.read_excel(upload_file)
+			st.dataframe(df)
+	    	else:
+			df = pd.read_csv(upload_file)
+			st.dataframe(df)
 
 
 	df.columns= df.columns.str.lower()
