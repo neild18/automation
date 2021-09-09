@@ -248,7 +248,7 @@ def main():
 		    if stw is True:
 		    	return "True"
 		    else:
-			return "False"
+		    	return "False"
 
 		df['slot_types'] = df['New'].apply(lambda x: stw(x))
 
