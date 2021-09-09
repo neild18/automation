@@ -93,7 +93,7 @@ def main():
 		    elif download:
 		    	return 'Downloads'
 		    elif mobile:
-			return 'mobile'
+		    	return 'mobile'
 		    elif online:
 			return 'Online'
 		    elif payout:
