@@ -40,7 +40,7 @@ def main():
 		    elif play:
 		    	return 'Play'
 		    elif gamble:
-			return 'Gamble'
+		    	return 'Gamble'
 		    else:
 			return 'none'
 		def modifier(keyword=""): 
