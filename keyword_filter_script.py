@@ -13,7 +13,7 @@ def main():
 	st.text('2\. It will create a column called \'Filter\' with Positive or Negative values. Positive being relevant keywords and Negative being irrelevant keywords.')
 	st.warning('Make sure that the CSV contains a column titled \'Keyword\'. \'KEYWORD\' won\'t work. The keyword column is essential, otherwise the file won\'t work.')
 	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
-	uploaded_file = st.file_uploader("Choose a file")
+	uploaded_file = st.file_uploader("Choose a file", type=["csv","xlsx"])
 	if uploaded_file is not None:
 		if uploaded_file.name[0][-4:] == 'xlsx':
 			df = pd.read_excel(uploaded_file)
