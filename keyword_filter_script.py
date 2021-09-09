@@ -5,6 +5,8 @@ import base64
 import io
 import time
 from io import StringIO
+import codecs
+
 
 def main():
 	st.title("Gaming Keyword Filter Tool")
