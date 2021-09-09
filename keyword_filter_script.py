@@ -36,7 +36,7 @@ def main():
 		    elif inform:
 		    	return 'Inform'
 		    elif compare:
-			return 'Compare'
+		    	return 'Compare'
 		    elif play:
 			return 'Play'
 		    elif gamble:
