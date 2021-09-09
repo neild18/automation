@@ -115,7 +115,7 @@ def main():
 		    elif bag:
 		    	return 'Bag'
 		    elif money:
-			return 'Money'
+		    	return 'Money'
 		    else:
 			return 'none'
 
