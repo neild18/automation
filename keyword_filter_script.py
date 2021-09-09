@@ -17,10 +17,9 @@ def main():
 	if uploaded_file is not None:
 		if uploaded_file.name[0][-4:] == 'xlsx':
 			df = pd.read_excel(uploaded_file)
-			st.dataframe(df)
+
 		else:
 			df = pd.read_csv(uploaded_file)
-			st.dataframe(df)
 
 
 		df.columns= df.columns.str.lower()
