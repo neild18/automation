@@ -32,7 +32,7 @@ def main():
 		    play = re.search(r'(play|demo|free|game|online|mobile|download|bonus|code|live|money|payouts|pay outs)', keyword)
 		    gamble = re.search(r'(deposit|pay[ ]*outs|real|bet|odds|betting)', keyword)
 		    if learn:
-			return 'learn'
+		    	return 'learn'
 		    elif inform:
 			return 'Inform'
 		    elif compare:
