@@ -133,7 +133,7 @@ def main():
 		    elif poker:
 		    	return 'poker'
 		    elif blackjack:
-			return 'blackjack'
+		    	return 'blackjack'
 		    elif roulette:
 			return 'roulette'
 		    elif horse_racing:
