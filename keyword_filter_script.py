@@ -34,7 +34,7 @@ def main():
 		    if learn:
 		    	return 'learn'
 		    elif inform:
-			return 'Inform'
+		    	return 'Inform'
 		    elif compare:
 			return 'Compare'
 		    elif play:
