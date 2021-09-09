@@ -101,7 +101,7 @@ def main():
 		    elif highest:
 		    	return 'Highest'
 		    elif wins:
-			return 'Wins'
+		    	return 'Wins'
 		    elif bonus:
 			return 'Bonus'
 		    elif bonus and codes:
