@@ -87,7 +87,7 @@ def main():
 		    elif best:
 		    	return 'Best'
 		    elif live:
-			return 'Live'
+		    	return 'Live'
 		    elif review:
 			return 'Review'
 		    elif download:
