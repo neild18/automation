@@ -21,7 +21,7 @@ def main():
 		return
 	content = file.getvalue()
 
-	if isinstance(file):
+	if isinstance(file, "csv"):
 		df = pd.read_csv(file)
 	else:
 		df = pd.read_excel(file)
