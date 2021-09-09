@@ -17,8 +17,6 @@ def main():
 	st.warning('Make sure that the CSV contains a column titled \'Keyword\'. \'KEYWORD\' won\'t work. The keyword column is essential, otherwise the file won\'t work.')
 	st.text('Once uploaded, go grab a brew (preferably something soft) while the file is being processed.')
 	uploaded_file = st.file_uploader("Choose a file", type=["csv","xlsx"], encoding=None)
-	bytes_data = uploaded_file.getvalue()
-	# To convert to a string based IO:
 	if uploaded_file is not None:
 		if uploaded_file.name[0][-4:] == 'xlsx':
 			df = pd.read_excel(uploaded_file)
