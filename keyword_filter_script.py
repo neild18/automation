@@ -79,7 +79,7 @@ def main():
 		    elif calculator:
 		    	return 'Calculator'
 		    elif odds:
-			return 'Odds'
+		    	return 'Odds'
 		    elif tips:
 			return 'Tips'
 		    elif deposit:
