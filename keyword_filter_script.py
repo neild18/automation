@@ -297,7 +297,7 @@ def main():
 		    elif negative_stopwords is True or in_location is True:
 		    	return "Negative"
 		    elif check is True:
-			return "Positive"
+		    	return "Positive"
 		    else :
 			return "Negative"
 
