@@ -42,7 +42,7 @@ def main():
 		    elif gamble:
 		    	return 'Gamble'
 		    else:
-			return 'none'
+		    	return 'none'
 		def modifier(keyword=""): 
 		    free = re.search(r'free', keyword)
 		    strategy = re.search(r'strategy', keyword)
